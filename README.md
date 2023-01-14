@@ -5,7 +5,7 @@
 
 | 번호 | 목차                                                                                          | Commit Message                  |
 |----|---------------------------------------------------------------------------------------------|---------------------------------|
-| 1  | [객체 지향 설계와 스프링](https://coffee-toothpaste-7a2.notion.site/76e067cb476342cf9f5b58cc55214c12) | OOP & Spring                    |
+| 1  | [객체 지향 설계와 스프링](https://coffee-toothpaste-7a2.notion.site/76e067cb476342cf9f5b58cc55214c12) | Object Oriented Design & Spring |
 | 2  | 스프링 핵심 원리 이해 1 - 예제 만들기                                                                     | Spring Core 1 - Develop the Ex. |
 | 3  | 스프링 핵심 원리 이해 2 - 객체 지향 원리 적용                                                                | Spring Core 1 - Apply OOP       |
 | 4  | 스프링 컨테이너와 스프링 빈                                                                             | Spring Container & Spring Bean  |
