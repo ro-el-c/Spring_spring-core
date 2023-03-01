@@ -1,7 +1,10 @@
+/** 팩토리 메서드를 통해 스프링 빈을 스프링 컨테이너에 등록하는 방법
+ *  = 외부에서 메소드(ex. memberService)를 호출해서 스프링 빈이 생성되는 방법
+ * */
+
 package hello.springcore;
 
 import hello.springcore.discount.DiscountPolicy;
-import hello.springcore.discount.FixDiscountPolicy;
 import hello.springcore.discount.RateDiscountPolicy;
 import hello.springcore.member.MemberRepository;
 import hello.springcore.member.MemberService;
