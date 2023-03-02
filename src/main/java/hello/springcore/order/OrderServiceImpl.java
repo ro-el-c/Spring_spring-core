@@ -17,7 +17,6 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
 
-
     @Override
     // 주문 생성 요청이 오면
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -39,4 +38,9 @@ public class OrderServiceImpl implements OrderService{
      *    OrderService 는 변경 없이 사용 가능
      *    DiscountPolicy 만 수정하면 됨
      */
+
+    // 테스트 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }

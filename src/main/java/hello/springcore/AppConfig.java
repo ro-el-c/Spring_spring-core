@@ -19,16 +19,21 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig { // 구성 영역
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
+        // memberRepository()는 new MemoryMemberRepository()로 치화될 수 있음
+        // 이것은 스프링 컨테이너가 관리하는 게 아님.
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
-    public MemberRepository memberRepository() {
+    public MemberRepository memberRepository(){
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
