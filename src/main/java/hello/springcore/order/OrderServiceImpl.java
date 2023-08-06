@@ -1,5 +1,6 @@
 package hello.springcore.order;
 
+import hello.springcore.annotation.MainDiscountPolicy;
 import hello.springcore.discount.DiscountPolicy;
 import hello.springcore.member.Member;
 import hello.springcore.member.MemberRepository;
@@ -15,7 +16,7 @@ public class OrderServiceImpl implements OrderService{
 
     //@Autowired
     // 생성자가 하나만 존재하면, @Autowired 생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
