@@ -1,25 +1,17 @@
 package hello.springcore.order;
 
 import hello.springcore.discount.DiscountPolicy;
-import hello.springcore.discount.FixDiscountPolicy;
-import hello.springcore.discount.RateDiscountPolicy;
 import hello.springcore.member.Member;
 import hello.springcore.member.MemberRepository;
-import hello.springcore.member.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component("orderServiceImplBean")
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
     // final - 바로 혹은 생성자를 통해 할당되어야 함
-
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
     @Override
     // 주문 생성 요청이 오면
