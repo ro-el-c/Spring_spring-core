@@ -1,4 +1,4 @@
-package hello.springcore.scan;
+package hello.springcore.scan.filter;
 
 @MyIncludeComponent
 public class BeanA {
