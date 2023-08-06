@@ -11,11 +11,12 @@ import org.springframework.stereotype.Component;
 
 @Component("orderServiceImplBean")
 public class OrderServiceImpl implements OrderService{
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+    // final - 바로 혹은 생성자를 통해 할당되어야 함
 
     @Autowired
-    public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
