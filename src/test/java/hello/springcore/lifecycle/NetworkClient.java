@@ -1,5 +1,8 @@
 package hello.springcore.lifecycle;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient {
     private String url;
 
@@ -25,6 +28,7 @@ public class NetworkClient {
         System.out.println("close: " + url);
     }
 
+    @PostConstruct
     public void init() {
         // 의존관계 주입이 끝나면 호출
         System.out.println("NetworkClient.init");
@@ -32,6 +36,7 @@ public class NetworkClient {
         call("초기화 연결 메시지");
     }
 
+    @PreDestroy
     public void close() {
         // 소멸 직전 호출
         System.out.println("NetworkClient.close");
