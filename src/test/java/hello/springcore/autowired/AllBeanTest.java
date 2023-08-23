@@ -38,7 +38,7 @@ public class AllBeanTest {
         // @Autowired - 생성자가 1개이기 때문에 생략 가능
         public DiscountService(Map<String, DiscountPolicy> policyMap, List<DiscountPolicy> policies) {
             this.policyMap = policyMap;
-            this.policies = policies;
+            this.policies = policies; 
             System.out.println("policyMap = " + policyMap);
             System.out.println("policies = " + policies);
         }
