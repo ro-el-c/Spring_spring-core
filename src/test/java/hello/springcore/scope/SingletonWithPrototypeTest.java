@@ -2,6 +2,7 @@ package hello.springcore.scope;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
 
@@ -40,20 +41,25 @@ public class SingletonWithPrototypeTest {
 
         ClientBean clientBean2 = ac.getBean(ClientBean.class);
         int cnt2 = clientBean2.logic();
-        assertThat(cnt2).isEqualTo(2);
+//        assertThat(cnt2).isEqualTo(2);
+        assertThat(cnt2).isEqualTo(1);
     }
 
     @Scope("singleton")
     static class ClientBean {
-        private final PrototypeBean prototypeBean; // 생성 시점에 주입 => 계속 같은 빈을 사용하게 됨
+//        private final PrototypeBean prototypeBean; // 생성 시점에 주입 => 계속 같은 빈을 사용하게 됨
 
         @Autowired
-        public ClientBean(PrototypeBean prototypeBean) {
-            // 스프링 컨테이너가 프로토타입 빈을 만들어 주입
-            this.prototypeBean = prototypeBean;
-        }
+        ApplicationContext applicationContext;
+
+//        @Autowired
+//        public ClientBean(PrototypeBean prototypeBean) {
+//            // 스프링 컨테이너가 프로토타입 빈을 만들어 주입
+//            this.prototypeBean = prototypeBean;
+//        }
 
         public int logic() {
+            PrototypeBean prototypeBean = applicationContext.getBean(PrototypeBean.class);
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
