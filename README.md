@@ -13,4 +13,4 @@
 | 6  | [컴포넌트 스캔](https://ro-el.notion.site/c6e69108915e46f081249c7e8271da74?pvs=4)                  | Component Scan                  |
 | 7  | [의존관계 자동 주입](https://ro-el.notion.site/f15de62ba8e64665988e5bdb9ab1a17e?pvs=4)               | Automatic Dependency Injection  |
 | 8  | [빈 생명주기 콜백](https://ro-el.notion.site/364983b2979147409881acb3ece85d12?pvs=4)                | Bean LifeCycle Callback         |
-| 9  | 빈 스코프                                                                                        | Bean Scope                      |
+| 9  | [빈 스코프](https://ro-el.notion.site/f93b01dfd0934bd496c504aab5df7328?pvs=4)                    | Bean Scope                      |
