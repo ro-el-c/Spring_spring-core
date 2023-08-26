@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 @RequiredArgsConstructor
 public class LogDemoController {
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> loggerProvider;
+    private final MyLogger logger;
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request) {
-        MyLogger myLogger = loggerProvider.getObject();
+//        MyLogger myLogger = loggerProvider.getObject();
         String requestURL = request.getRequestURL().toString();
-        myLogger.setRequestURL(requestURL);
+        logger.setRequestURL(requestURL);
 
-        myLogger.log("controller test");
+        logger.log("controller test");
         logDemoService.logic("testId");
         return "ok";
     }
